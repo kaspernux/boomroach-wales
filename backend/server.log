@@ -1,0 +1,182 @@
+ExpressSlowDownWarning: The behaviour of the 'delayMs' option was changed in express-slow-down v2:
+- For the old behavior, change the delayMs option to:
+
+  delayMs: (used, req) => {
+	  const delayAfter = req.slowDown.limit;
+	  return (used - delayAfter) * 100;
+  },
+
+- For the new behavior, change the delayMs option to:
+
+	delayMs: () => 100,
+
+Or set 'options.validate: {delayMs: false}' to disable this message. See https://express-rate-limit.github.io/WRN_ESD_DELAYMS/ for more information.
+    at slowDown (/home/project/backend/node_modules/express-slow-down/dist/index.cjs:78:18)
+    at slowDown (/home/project/backend/src/middleware/security.ts:188:29)
+    at Object.<anonymous> (/home/project/backend/src/middleware/security.ts:383:1)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object.transformer (/home/same/.nvm/versions/node/v22.14.0/lib/node_modules/tsx/dist/register-D2KMMyKp.cjs:2:1186)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12) {
+  code: 'WRN_ESD_DELAYMS',
+  help: 'https://express-rate-limit.github.io/WRN_ESD_DELAYMS/'
+}
+2025-06-03T16:45:31.376Z [[32minfo[39m]: Hydra-Bot data streams started {"service":"boomroach-api"}
+2025-06-03T16:45:31.378Z [[32minfo[39m]: WebSocket service initialized {"service":"boomroach-api"}
+📊 Metrics collection started
+✅ Monitoring service initialized successfully
+✅ Database connected successfully
+❌ Hydra-Bot initialization failed: PrismaClientUnknownRequestError: 
+Invalid `prisma.engineStatus.count()` invocation in
+/home/project/backend/src/server.ts:70:49
+
+  67 const initializeHydraBotData = async () => {
+  68 	try {
+  69 		// Check if trading engines exist in database
+→ 70 		const engineCount = await prisma.engineStatus.count(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(SqliteError { extended_code: 11, message: Some("database disk image is malformed") }), transient: false })
+    at $n.handleRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:7505)
+    at $n.handleAndLogRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/project/backend/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async initializeHydraBotData (/home/project/backend/src/server.ts:70:23)
+    at async initializeDatabase (/home/project/backend/src/server.ts:57:3)
+    at async startServer (/home/project/backend/src/server.ts:335:23) {
+  clientVersion: '5.22.0'
+}
+🚀 BoomRoach Server with Hydra-Bot running on port 3001
+🌍 Environment: development
+🔌 WebSocket connections: 0
+🛡️  Security: Advanced rate limiting and CORS enabled
+🤖 Hydra-Bot: Integrated trading engines ready
+📊 Database: Connected
+📈 Monitoring: Active
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+GET /health - 200 - 2ms - 04a7504d-bd71-4b8d-9c7a-0d2c6ccab831
+HTTP Request {
+  requestId: 'req_1748969264200_f55kh9ut5',
+  method: 'GET',
+  url: '/health',
+  status: 200,
+  duration: 11,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '206'
+}
+GET /health - 200 - 1ms - 3acdbdb6-d46e-4752-9cfe-cfc059ede23b
+HTTP Request {
+  requestId: 'req_1748969271709_317agiwt3',
+  method: 'GET',
+  url: '/health',
+  status: 200,
+  duration: 1,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '207'
+}
+GET /health - 200 - 0ms - f14d65d6-acfa-4b64-81f0-a6b776627958
+HTTP Request {
+  requestId: 'req_1748969303583_90wdjeaj9',
+  method: 'GET',
+  url: '/health',
+  status: 200,
+  duration: 1,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '207'
+}
+Batched metrics sent { count: 8 }
+GET / - 200 - 0ms - dfb7292a-4f07-462d-8ca8-882841b7a6e9
+HTTP Request {
+  requestId: 'req_1748969312466_tmrvwsd0b',
+  method: 'GET',
+  url: '/',
+  status: 200,
+  duration: 2,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '539'
+}
+GET / - 200 - 0ms - 49e9427c-83d3-4f20-8bcb-c89913e53626
+HTTP Request {
+  requestId: 'req_1748969346031_u332hbyh6',
+  method: 'GET',
+  url: '/',
+  status: 200,
+  duration: 2,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '539'
+}
+GET /engines - 401 - 1ms - e462f242-4adc-4f43-b9e4-ba1aaf0cefc4
+HTTP Error Response {
+  requestId: 'req_1748969354924_qdd62s66r',
+  method: 'GET',
+  url: '/engines',
+  status: 401,
+  duration: 2,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '49'
+}
+GET / - 404 - 1ms - b163c29e-5163-4d9c-9f95-d9f04611fa65
+HTTP Error Response {
+  requestId: 'req_1748969362469_pgxukg6hq',
+  method: 'GET',
+  url: '/',
+  status: 404,
+  duration: 1,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '152'
+}
+GET /market/realtime - 401 - 0ms - c5c8820b-7081-44a9-ae45-a016f45bf9fd
+HTTP Error Response {
+  requestId: 'req_1748969369452_2ir61toc7',
+  method: 'GET',
+  url: '/market/realtime',
+  status: 401,
+  duration: 1,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '49'
+}
+Batched metrics sent { count: 4 }
+GET /api/websocket/info - 200 - 1ms - 7143184a-36b8-408e-94ad-cdc2c5226ccd
+HTTP Request {
+  requestId: 'req_1748969377468_tvcih41kx',
+  method: 'GET',
+  url: '/api/websocket/info',
+  status: 200,
+  duration: 3,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '188'
+}
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }

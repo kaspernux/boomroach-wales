@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "maxSlippage": 10,
+  "defaultSlippage": 3,
+  "minTradeAmount": 0.01,
+  "maxTradeAmount": 1000,
+  "commissionRate": 0.25,
+  "maxDailyTrades": 100,
+  "tradingHours": {
+    "enabled": false,
+    "startHour": 0,
+    "endHour": 24,
+    "timezone": "UTC"
+  },
+  "backend": {
+    "apiUrl": "http://localhost:3000/api",
+    "authRequired": true,
+    "rateLimitPerMinute": 60
+  }
+}

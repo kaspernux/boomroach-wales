@@ -1,0 +1,12 @@
+aiohttp==3.9.1
+websockets==12.0
+numpy==1.24.3
+pandas==2.1.1
+asyncio
+python-dotenv==1.0.0
+requests==2.31.0
+solana==0.34.0
+solders==0.19.0
+base58==2.1.1
+cryptography==41.0.7
+pydantic==2.5.0

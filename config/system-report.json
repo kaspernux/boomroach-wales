@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-06-01T16:16:13.138Z",
+  "system": {
+    "platform": "linux",
+    "arch": "arm64",
+    "nodeVersion": "v22.14.0"
+  },
+  "frontend": {
+    "directory": "boomroach",
+    "packageManager": "bun",
+    "built": true
+  },
+  "backend": {
+    "directory": "boomroach/backend/",
+    "packageManager": "bun",
+    "built": true
+  },
+  "features": {
+    "hydraBot": true,
+    "telegramBot": true,
+    "websockets": true,
+    "database": true,
+    "authentication": true,
+    "gamification": true
+  }
+}

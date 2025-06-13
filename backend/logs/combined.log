@@ -1,0 +1,791 @@
+{
+  message: 'WebSocket service initialized successfully',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:51:43'
+}
+{
+  message: '🚀 BoomRoach Enhanced Backend API running on http://0.0.0.0:3001',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:51:44'
+}
+{
+  message: '📊 Health check: http://localhost:3001/health',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:51:44'
+}
+{
+  message: 'WebSocket service initialized successfully',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '🚀 BoomRoach Enhanced Backend API running on http://0.0.0.0:3001',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '📊 Health check: http://localhost:3001/health',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '🔗 API Status: http://localhost:3001/api/status',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '💎 BoomRoach Data: http://localhost:3001/api/boomroach',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '🌐 WebSocket: ws://localhost:3001',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '📈 Trading API: http://localhost:3001/api/trading',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '🔄 Advanced Features Active:',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '  • Real-time WebSocket connections',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '  • Advanced error handling and logging',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '  • Comprehensive trading engine APIs',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '  • Performance monitoring',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '  • Database with sample data ready',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  service: 'boomroach-backend',
+  name: 'PrismaClientInitializationError',
+  clientVersion: '5.22.0',
+  errorCode: undefined,
+  level: 'error',
+  message: '❌ Database connection failed: Error querying the database: Error code 14: Unable to open the database file',
+  stack: 'PrismaClientInitializationError: Error querying the database: Error code 14: Unable to open the database file\n' +
+    '    at new PrismaClientInitializationError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:21:1872)\n' +
+    '    at <anonymous> (/home/project/backend/node_modules/@prisma/client/runtime/library.js:112:2492)\n' +
+    '    at processTicksAndRejections (native:7:39)',
+  timestamp: '2025-06-02 08:53:03'
+}
+{
+  message: '✅ WebSocket service initialized successfully',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '✅ Database connected successfully (simulated)',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '🚀 BoomRoach Enhanced Backend API running on http://0.0.0.0:3001',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '📊 Health check: http://localhost:3001/health',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '📊 Detailed health: http://localhost:3001/health/detailed',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '🔗 API Status: http://localhost:3001/api/status',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '💎 BoomRoach Data: http://localhost:3001/api/boomroach',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '🌐 WebSocket: ws://localhost:3001',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '📈 Trading API: http://localhost:3001/api/trading',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '🏆 Leaderboard: http://localhost:3001/api/leaderboard',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '📡 Live Stream: http://localhost:3001/api/stream/live-data',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '🔄 Enhanced Features Active:',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '  ✅ Real-time WebSocket connections',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '  ✅ Advanced error handling and logging',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '  ✅ Comprehensive trading engine APIs',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '  ✅ Performance monitoring and analytics',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '  ✅ Server-Sent Events for live data',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '  ✅ Request tracking and debugging',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  message: '',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:20'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'ac38377e-2c56-472d-9ad1-04ca3980cbd4',
+  method: 'GET',
+  url: '/health',
+  userAgent: 'curl/8.5.0',
+  ip: '127.0.0.1',
+  timestamp: '2025-06-02 08:55:28',
+  level: 'info',
+  message: 'Request started'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'ac38377e-2c56-472d-9ad1-04ca3980cbd4',
+  method: 'GET',
+  url: '/health',
+  headers: {
+    host: 'localhost:3001',
+    'user-agent': 'curl/8.5.0',
+    accept: '*/*',
+    'x-request-id': 'ac38377e-2c56-472d-9ad1-04ca3980cbd4'
+  },
+  body: {},
+  query: {},
+  params: {},
+  level: 'info',
+  message: 'Incoming request',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  service: 'boomroach-backend',
+  health: {
+    status: 'healthy',
+    timestamp: '2025-06-02T08:55:28.501Z',
+    uptime: '0h 0m',
+    memory: { rss: '81MB', heapUsed: '7MB', heapTotal: '6MB' },
+    version: '1.0.0',
+    environment: 'development',
+    requestId: 'ac38377e-2c56-472d-9ad1-04ca3980cbd4'
+  },
+  level: 'info',
+  message: 'Health check performed',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'ac38377e-2c56-472d-9ad1-04ca3980cbd4',
+  method: 'GET',
+  url: '/health',
+  statusCode: 200,
+  duration: '1ms',
+  responseSize: 232,
+  level: 'info',
+  message: 'Request completed',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  message: '127.0.0.1 - - [02/Jun/2025:08:55:28 +0000] "GET /health HTTP/1.1" 200 232 "-" "curl/8.5.0"',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  service: 'boomroach-backend',
+  requestId: '6714987f-ae3c-4083-8b56-f1f04597e11c',
+  method: 'GET',
+  url: '/api/websocket/info',
+  userAgent: 'curl/8.5.0',
+  ip: '127.0.0.1',
+  timestamp: '2025-06-02 08:55:28',
+  level: 'info',
+  message: 'Request started'
+}
+{
+  service: 'boomroach-backend',
+  requestId: '6714987f-ae3c-4083-8b56-f1f04597e11c',
+  method: 'GET',
+  url: '/api/websocket/info',
+  headers: {
+    host: 'localhost:3001',
+    'user-agent': 'curl/8.5.0',
+    accept: '*/*',
+    'x-request-id': '6714987f-ae3c-4083-8b56-f1f04597e11c'
+  },
+  body: {},
+  query: {},
+  params: {},
+  level: 'info',
+  message: 'Incoming request',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  service: 'boomroach-backend',
+  requestId: '6714987f-ae3c-4083-8b56-f1f04597e11c',
+  method: 'GET',
+  url: '/api/websocket/info',
+  statusCode: 200,
+  duration: '0ms',
+  responseSize: 554,
+  level: 'info',
+  message: 'Request completed',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  message: '127.0.0.1 - - [02/Jun/2025:08:55:28 +0000] "GET /api/websocket/info HTTP/1.1" 200 554 "-" "curl/8.5.0"',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  service: 'boomroach-backend',
+  requestId: '01c6496a-1803-4b39-bcb5-a6e133b23d45',
+  method: 'GET',
+  url: '/api/trading/engines',
+  userAgent: 'curl/8.5.0',
+  ip: '127.0.0.1',
+  timestamp: '2025-06-02 08:55:28',
+  level: 'info',
+  message: 'Request started'
+}
+{
+  service: 'boomroach-backend',
+  requestId: '01c6496a-1803-4b39-bcb5-a6e133b23d45',
+  method: 'GET',
+  url: '/api/trading/engines',
+  headers: {
+    host: 'localhost:3001',
+    'user-agent': 'curl/8.5.0',
+    accept: '*/*',
+    'x-request-id': '01c6496a-1803-4b39-bcb5-a6e133b23d45'
+  },
+  body: {},
+  query: {},
+  params: {},
+  level: 'info',
+  message: 'Incoming request',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  message: 'Fetching trading engines list',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  service: 'boomroach-backend',
+  requestId: '01c6496a-1803-4b39-bcb5-a6e133b23d45',
+  method: 'GET',
+  url: '/engines',
+  statusCode: 200,
+  duration: '1ms',
+  responseSize: 1462,
+  level: 'info',
+  message: 'Request completed',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  message: '127.0.0.1 - - [02/Jun/2025:08:55:28 +0000] "GET /api/trading/engines HTTP/1.1" 200 1462 "-" "curl/8.5.0"',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:28'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'd4eb28f2-6beb-412f-a3ae-2194bed872b3',
+  method: 'GET',
+  url: '/api/trading/engines',
+  userAgent: 'curl/8.5.0',
+  ip: '127.0.0.1',
+  timestamp: '2025-06-02 08:55:37',
+  level: 'info',
+  message: 'Request started'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'd4eb28f2-6beb-412f-a3ae-2194bed872b3',
+  method: 'GET',
+  url: '/api/trading/engines',
+  headers: {
+    host: 'localhost:3001',
+    'user-agent': 'curl/8.5.0',
+    accept: '*/*',
+    'x-request-id': 'd4eb28f2-6beb-412f-a3ae-2194bed872b3'
+  },
+  body: {},
+  query: {},
+  params: {},
+  level: 'info',
+  message: 'Incoming request',
+  timestamp: '2025-06-02 08:55:37'
+}
+{
+  message: 'Fetching trading engines list',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:37'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'd4eb28f2-6beb-412f-a3ae-2194bed872b3',
+  method: 'GET',
+  url: '/engines',
+  statusCode: 200,
+  duration: '1ms',
+  responseSize: 1462,
+  level: 'info',
+  message: 'Request completed',
+  timestamp: '2025-06-02 08:55:37'
+}
+{
+  message: '127.0.0.1 - - [02/Jun/2025:08:55:37 +0000] "GET /api/trading/engines HTTP/1.1" 200 1462 "-" "curl/8.5.0"',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:37'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'c285cd96-44ef-4379-a992-95264963d311',
+  method: 'GET',
+  url: '/api/websocket/info',
+  userAgent: 'curl/8.5.0',
+  ip: '127.0.0.1',
+  timestamp: '2025-06-02 08:55:46',
+  level: 'info',
+  message: 'Request started'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'c285cd96-44ef-4379-a992-95264963d311',
+  method: 'GET',
+  url: '/api/websocket/info',
+  headers: {
+    host: 'localhost:3001',
+    'user-agent': 'curl/8.5.0',
+    accept: '*/*',
+    'x-request-id': 'c285cd96-44ef-4379-a992-95264963d311'
+  },
+  body: {},
+  query: {},
+  params: {},
+  level: 'info',
+  message: 'Incoming request',
+  timestamp: '2025-06-02 08:55:46'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'c285cd96-44ef-4379-a992-95264963d311',
+  method: 'GET',
+  url: '/api/websocket/info',
+  statusCode: 200,
+  duration: '0ms',
+  responseSize: 555,
+  level: 'info',
+  message: 'Request completed',
+  timestamp: '2025-06-02 08:55:46'
+}
+{
+  message: '127.0.0.1 - - [02/Jun/2025:08:55:46 +0000] "GET /api/websocket/info HTTP/1.1" 200 555 "-" "curl/8.5.0"',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:46'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'c5baf28c-71f1-4c60-b555-e3c993043fda',
+  method: 'GET',
+  url: '/api/leaderboard',
+  userAgent: 'curl/8.5.0',
+  ip: '127.0.0.1',
+  timestamp: '2025-06-02 08:55:56',
+  level: 'info',
+  message: 'Request started'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'c5baf28c-71f1-4c60-b555-e3c993043fda',
+  method: 'GET',
+  url: '/api/leaderboard',
+  headers: {
+    host: 'localhost:3001',
+    'user-agent': 'curl/8.5.0',
+    accept: '*/*',
+    'x-request-id': 'c5baf28c-71f1-4c60-b555-e3c993043fda'
+  },
+  body: {},
+  query: {},
+  params: {},
+  level: 'info',
+  message: 'Incoming request',
+  timestamp: '2025-06-02 08:55:56'
+}
+{
+  service: 'boomroach-backend',
+  requestId: 'c5baf28c-71f1-4c60-b555-e3c993043fda',
+  method: 'GET',
+  url: '/api/leaderboard',
+  statusCode: 200,
+  duration: '1ms',
+  responseSize: 2647,
+  level: 'info',
+  message: 'Request completed',
+  timestamp: '2025-06-02 08:55:56'
+}
+{
+  message: '127.0.0.1 - - [02/Jun/2025:08:55:56 +0000] "GET /api/leaderboard HTTP/1.1" 200 2667 "-" "curl/8.5.0"',
+  level: 'info',
+  service: 'boomroach-backend',
+  timestamp: '2025-06-02 08:55:56'
+}
+{"timestamp":"2025-06-02T10:07:53.533Z","level":"info","message":"Production trading data initialized","service":"boomroach-api","trades":1000,"users":50,"engines":4}
+{"timestamp":"2025-06-02T10:07:53.543Z","level":"info","message":"Data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.543Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.543Z","level":"info","message":"✅ WebSocket service initialized successfully","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.614Z","level":"info","message":"🚀 BoomRoach Production Backend API running on http://0.0.0.0:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.614Z","level":"info","message":"📊 Health check: http://localhost:3001/health","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.615Z","level":"info","message":"🔗 API Status: http://localhost:3001/api/status","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.615Z","level":"info","message":"💎 BoomRoach Data: http://localhost:3001/api/boomroach","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.615Z","level":"info","message":"🌐 WebSocket: ws://localhost:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.615Z","level":"info","message":"📈 Trading API: http://localhost:3001/api/trading","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.615Z","level":"info","message":"🏆 Leaderboard: http://localhost:3001/api/leaderboard","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.615Z","level":"info","message":"📡 Live Stream: http://localhost:3001/api/stream/live-data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.615Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.615Z","level":"info","message":"🔄 Production Features Active:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.616Z","level":"info","message":"  ✅ Real-time WebSocket connections","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.616Z","level":"info","message":"  ✅ Advanced error handling and logging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.616Z","level":"info","message":"  ✅ Comprehensive trading engine APIs","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.616Z","level":"info","message":"  ✅ Performance monitoring and analytics","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.616Z","level":"info","message":"  ✅ Server-Sent Events for live data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.616Z","level":"info","message":"  ✅ Request tracking and debugging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.616Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:07:53.635Z","level":"error","message":"❌ Database connection failed: Error querying the database: Error code 14: Unable to open the database file","stack":"PrismaClientInitializationError: Error querying the database: Error code 14: Unable to open the database file\n    at new PrismaClientInitializationError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:21:1872)\n    at <anonymous> (/home/project/backend/node_modules/@prisma/client/runtime/library.js:112:2492)\n    at processTicksAndRejections (native:7:39)","service":"boomroach-api","name":"PrismaClientInitializationError","clientVersion":"5.22.0"}
+{"timestamp":"2025-06-02T10:10:15.650Z","level":"info","message":"Production trading data initialized","service":"boomroach-api","trades":1000,"users":50,"engines":4}
+{"timestamp":"2025-06-02T10:10:15.660Z","level":"info","message":"Data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:10:15.660Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:10:15.661Z","level":"info","message":"✅ WebSocket service initialized successfully","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:10:15.683Z","level":"info","message":"🚀 BoomRoach Production Backend API running on http://0.0.0.0:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.924Z","level":"info","message":"Production trading data initialized","service":"boomroach-api","trades":1000,"users":50,"engines":4}
+{"timestamp":"2025-06-02T10:12:43.934Z","level":"info","message":"Data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.934Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.934Z","level":"info","message":"✅ WebSocket service initialized successfully","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.957Z","level":"info","message":"🚀 BoomRoach Production Backend API running on http://0.0.0.0:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.957Z","level":"info","message":"📊 Health check: http://localhost:3001/health","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.958Z","level":"info","message":"🔗 API Status: http://localhost:3001/api/status","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.958Z","level":"info","message":"💎 BoomRoach Data: http://localhost:3001/api/boomroach","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.958Z","level":"info","message":"🌐 WebSocket: ws://localhost:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.958Z","level":"info","message":"📈 Trading API: http://localhost:3001/api/trading","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.958Z","level":"info","message":"🏆 Leaderboard: http://localhost:3001/api/leaderboard","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.958Z","level":"info","message":"📡 Live Stream: http://localhost:3001/api/stream/live-data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.958Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.959Z","level":"info","message":"🔄 Production Features Active:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.959Z","level":"info","message":"  ✅ Real-time WebSocket connections","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.959Z","level":"info","message":"  ✅ Advanced error handling and logging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.959Z","level":"info","message":"  ✅ Comprehensive trading engine APIs","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.959Z","level":"info","message":"  ✅ Performance monitoring and analytics","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.959Z","level":"info","message":"  ✅ Server-Sent Events for live data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.959Z","level":"info","message":"  ✅ Request tracking and debugging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.959Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:12:43.961Z","level":"warn","message":"⚠️ Database connection failed, continuing without database:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:14:24.032Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:14:24 +0000] \"GET /health HTTP/1.1\" 200 508 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:14:31.435Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:14:31 +0000] \"GET /health HTTP/1.1\" 200 504 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:14:46.750Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:14:46 +0000] \"GET /health HTTP/1.1\" 200 509 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:14:55.069Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:14:55 +0000] \"GET /health HTTP/1.1\" 200 509 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:15:01.567Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:15:01 +0000] \"GET /health HTTP/1.1\" 200 504 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:15:09.178Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:15:09 +0000] \"GET /api/status HTTP/1.1\" 200 601 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:15:16.204Z","level":"info","message":"Fetching trading engines list","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:15:16.206Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:15:16 +0000] \"GET /api/trading/engines HTTP/1.1\" 200 2690 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:25:37.146Z","level":"info","message":"Fetching trading engines list","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:25:37.148Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:25:37 +0000] \"GET /api/trading/engines HTTP/1.1\" 200 2691 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:25:44.945Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:25:44 +0000] \"POST /api/auth/register HTTP/1.1\" 404 88 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:24.951Z","level":"info","message":"Received SIGTERM. Starting graceful shutdown...","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.105Z","level":"info","message":"Production trading data initialized","service":"boomroach-api","trades":1000,"users":50,"engines":4}
+{"timestamp":"2025-06-02T10:26:36.116Z","level":"info","message":"Data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.116Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.116Z","level":"info","message":"✅ WebSocket service initialized successfully","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.142Z","level":"info","message":"🚀 BoomRoach Production Backend API running on http://0.0.0.0:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.142Z","level":"info","message":"📊 Health check: http://localhost:3001/health","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.142Z","level":"info","message":"🔗 API Status: http://localhost:3001/api/status","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.143Z","level":"info","message":"💎 BoomRoach Data: http://localhost:3001/api/boomroach","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.143Z","level":"info","message":"🌐 WebSocket: ws://localhost:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.143Z","level":"info","message":"📈 Trading API: http://localhost:3001/api/trading","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.143Z","level":"info","message":"🏆 Leaderboard: http://localhost:3001/api/leaderboard","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.143Z","level":"info","message":"📡 Live Stream: http://localhost:3001/api/stream/live-data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.143Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.143Z","level":"info","message":"🔄 Production Features Active:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.143Z","level":"info","message":"  ✅ Real-time WebSocket connections","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.144Z","level":"info","message":"  ✅ Advanced error handling and logging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.144Z","level":"info","message":"  ✅ Comprehensive trading engine APIs","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.144Z","level":"info","message":"  ✅ Performance monitoring and analytics","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.144Z","level":"info","message":"  ✅ Server-Sent Events for live data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.144Z","level":"info","message":"  ✅ Request tracking and debugging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.144Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:26:36.146Z","level":"warn","message":"⚠️ Database connection failed, continuing without database:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:16.981Z","level":"error","message":"Server error","requestId":"74d05eb0-903c-432e-ba18-bb0297f9db57","service":"boomroach-api","error":{"message":"\nInvalid `prisma.user.findFirst()` invocation:\n\n\nError querying the database: Error code 14: Unable to open the database file","name":"PrismaClientInitializationError","stack":"PrismaClientInitializationError: \nInvalid `prisma.user.findFirst()` invocation:\n\n\nError querying the database: Error code 14: Unable to open the database file\n    at new PrismaClientInitializationError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:21:1872)\n    at handleRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:7619)\n    at handleAndLogRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at <anonymous> (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at processTicksAndRejections (native:7:39)","code":"INTERNAL_ERROR"},"request":{"method":"POST","url":"/api/auth/register","userAgent":"curl/8.5.0","ip":"127.0.0.1","requestId":"74d05eb0-903c-432e-ba18-bb0297f9db57"},"response":{"statusCode":500}}
+{"timestamp":"2025-06-02T10:28:16.984Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:28:16 +0000] \"POST /api/auth/register HTTP/1.1\" 500 840 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:41.495Z","level":"info","message":"Received SIGTERM. Starting graceful shutdown...","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.230Z","level":"info","message":"Production trading data initialized","service":"boomroach-api","trades":1000,"users":50,"engines":4}
+{"timestamp":"2025-06-02T10:28:52.241Z","level":"info","message":"Data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.241Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.241Z","level":"info","message":"✅ WebSocket service initialized successfully","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.313Z","level":"info","message":"🚀 BoomRoach Production Backend API running on http://0.0.0.0:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.313Z","level":"info","message":"📊 Health check: http://localhost:3001/health","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.313Z","level":"info","message":"🔗 API Status: http://localhost:3001/api/status","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.313Z","level":"info","message":"💎 BoomRoach Data: http://localhost:3001/api/boomroach","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.314Z","level":"info","message":"🌐 WebSocket: ws://localhost:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.314Z","level":"info","message":"📈 Trading API: http://localhost:3001/api/trading","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.314Z","level":"info","message":"🏆 Leaderboard: http://localhost:3001/api/leaderboard","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.314Z","level":"info","message":"📡 Live Stream: http://localhost:3001/api/stream/live-data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.314Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.314Z","level":"info","message":"🔄 Production Features Active:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.314Z","level":"info","message":"  ✅ Real-time WebSocket connections","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.315Z","level":"info","message":"  ✅ Advanced error handling and logging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.315Z","level":"info","message":"  ✅ Comprehensive trading engine APIs","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.315Z","level":"info","message":"  ✅ Performance monitoring and analytics","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.315Z","level":"info","message":"  ✅ Server-Sent Events for live data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.315Z","level":"info","message":"  ✅ Request tracking and debugging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.315Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:28:52.334Z","level":"warn","message":"⚠️ Database connection failed, continuing without database:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:32:07.801Z","level":"warn","message":"Client error","requestId":"89dd512d-f1d9-49fb-9dad-50921bf37710","service":"boomroach-api","error":{"message":"Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character","name":"Error","stack":"Error: Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character\n    at createValidationError (/home/project/backend/src/middleware/error-handler.ts:344:14)\n    at <anonymous> (/home/project/backend/src/routes/auth.ts:102:11)\n    at <anonymous> (/home/project/backend/src/routes/auth.ts:80:46)\n    at <anonymous> (/home/project/backend/src/middleware/error-handler.ts:338:21)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/project/backend/node_modules/express/lib/router/route.js:149:13)\n    at dispatch (/home/project/backend/node_modules/express/lib/router/route.js:119:3)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:284:15)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at handle (/home/project/backend/node_modules/express/lib/router/index.js:175:3)\n    at router (/home/project/backend/node_modules/express/lib/router/index.js:47:12)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at performanceMiddleware (/home/project/backend/src/middleware/error-handler.ts:233:3)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at requestIdMiddleware (/home/project/backend/src/middleware/error-handler.ts:169:3)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at logger (/home/project/backend/node_modules/morgan/index.js:144:5)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at cors (/home/project/backend/node_modules/cors/lib/index.js:188:7)\n    at <anonymous> (/home/project/backend/node_modules/cors/lib/index.js:224:17)\n    at originCallback (/home/project/backend/node_modules/cors/lib/index.js:214:15)\n    at <anonymous> (/home/project/backend/node_modules/cors/lib/index.js:219:13)\n    at optionsCallback (/home/project/backend/node_modules/cors/lib/index.js:199:9)\n    at corsMiddleware (/home/project/backend/node_modules/cors/lib/index.js:204:7)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at urlencodedParser (/home/project/backend/node_modules/body-parser/lib/types/urlencoded.js:85:7)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at <anonymous> (/home/project/backend/node_modules/body-parser/lib/read.js:137:5)\n    at runInAsyncScope (node:async_hooks:144:23)\n    at invokeCallback (/home/project/backend/node_modules/raw-body/index.js:238:16)\n    at done (/home/project/backend/node_modules/raw-body/index.js:227:7)\n    at onEnd (/home/project/backend/node_modules/raw-body/index.js:287:7)\n    at emit (node:events:86:22)\n    at endReadableNT (internal:streams/readable:862:50)\n    at processTicksAndRejections (native:7:39)","code":"VALIDATION_ERROR","details":{"field":"password","value":"invalid"}},"request":{"method":"POST","url":"/api/auth/register","userAgent":"curl/8.5.0","ip":"127.0.0.1","requestId":"89dd512d-f1d9-49fb-9dad-50921bf37710"},"response":{"statusCode":400}}
+{"timestamp":"2025-06-02T10:32:07.804Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:32:07 +0000] \"POST /api/auth/register HTTP/1.1\" 400 4933 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:33:54.319Z","level":"error","message":"Server error","requestId":"9b29b2cd-bfc2-48d5-9ddf-7c2e91b4603a","service":"boomroach-api","error":{"message":"\nInvalid `prisma.user.findFirst()` invocation:\n\n\nError querying the database: Error code 14: Unable to open the database file","name":"PrismaClientInitializationError","stack":"PrismaClientInitializationError: \nInvalid `prisma.user.findFirst()` invocation:\n\n\nError querying the database: Error code 14: Unable to open the database file\n    at new PrismaClientInitializationError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:21:1872)\n    at handleRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:7619)\n    at handleAndLogRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at <anonymous> (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at processTicksAndRejections (native:7:39)","code":"INTERNAL_ERROR"},"request":{"method":"POST","url":"/api/auth/register","userAgent":"curl/8.5.0","ip":"127.0.0.1","requestId":"9b29b2cd-bfc2-48d5-9ddf-7c2e91b4603a"},"response":{"statusCode":500}}
+{"timestamp":"2025-06-02T10:33:54.320Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:33:54 +0000] \"POST /api/auth/register HTTP/1.1\" 500 840 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:34:02.364Z","level":"warn","message":"Client error","requestId":"159ddda3-1d1b-4fd0-8ba6-a6c918115638","service":"boomroach-api","error":{"message":"Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character","name":"Error","stack":"Error: Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character\n    at createValidationError (/home/project/backend/src/middleware/error-handler.ts:344:14)\n    at <anonymous> (/home/project/backend/src/routes/auth.ts:102:11)\n    at <anonymous> (/home/project/backend/src/routes/auth.ts:80:46)\n    at <anonymous> (/home/project/backend/src/middleware/error-handler.ts:338:21)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/project/backend/node_modules/express/lib/router/route.js:149:13)\n    at dispatch (/home/project/backend/node_modules/express/lib/router/route.js:119:3)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:284:15)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at handle (/home/project/backend/node_modules/express/lib/router/index.js:175:3)\n    at router (/home/project/backend/node_modules/express/lib/router/index.js:47:12)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at performanceMiddleware (/home/project/backend/src/middleware/error-handler.ts:233:3)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at requestIdMiddleware (/home/project/backend/src/middleware/error-handler.ts:169:3)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at logger (/home/project/backend/node_modules/morgan/index.js:144:5)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at cors (/home/project/backend/node_modules/cors/lib/index.js:188:7)\n    at <anonymous> (/home/project/backend/node_modules/cors/lib/index.js:224:17)\n    at originCallback (/home/project/backend/node_modules/cors/lib/index.js:214:15)\n    at <anonymous> (/home/project/backend/node_modules/cors/lib/index.js:219:13)\n    at optionsCallback (/home/project/backend/node_modules/cors/lib/index.js:199:9)\n    at corsMiddleware (/home/project/backend/node_modules/cors/lib/index.js:204:7)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at urlencodedParser (/home/project/backend/node_modules/body-parser/lib/types/urlencoded.js:85:7)\n    at handle (/home/project/backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/project/backend/node_modules/express/lib/router/index.js:328:13)\n    at <anonymous> (/home/project/backend/node_modules/express/lib/router/index.js:286:9)\n    at next (/home/project/backend/node_modules/express/lib/router/index.js:280:10)\n    at <anonymous> (/home/project/backend/node_modules/body-parser/lib/read.js:137:5)\n    at runInAsyncScope (node:async_hooks:144:23)\n    at invokeCallback (/home/project/backend/node_modules/raw-body/index.js:238:16)\n    at done (/home/project/backend/node_modules/raw-body/index.js:227:7)\n    at onEnd (/home/project/backend/node_modules/raw-body/index.js:287:7)\n    at emit (node:events:86:22)\n    at endReadableNT (internal:streams/readable:862:50)\n    at processTicksAndRejections (native:7:39)","code":"VALIDATION_ERROR","details":{"field":"password","value":"invalid"}},"request":{"method":"POST","url":"/api/auth/register","userAgent":"curl/8.5.0","ip":"127.0.0.1","requestId":"159ddda3-1d1b-4fd0-8ba6-a6c918115638"},"response":{"statusCode":400}}
+{"timestamp":"2025-06-02T10:34:02.364Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:34:02 +0000] \"POST /api/auth/register HTTP/1.1\" 400 4933 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:34:09.791Z","level":"error","message":"Server error","requestId":"6d3fd81b-d027-44ff-afc8-abafde07af51","service":"boomroach-api","error":{"message":"\nInvalid `prisma.user.findFirst()` invocation in\n/home/project/backend/src/routes/auth.ts:106:42\n\n  103 }\n  104 \n  105 // Check if user already exists\n→ 106 const existingUser = await prisma.user.findFirst(\nError querying the database: Error code 14: Unable to open the database file","name":"PrismaClientInitializationError","stack":"PrismaClientInitializationError: \nInvalid `prisma.user.findFirst()` invocation in\n/home/project/backend/src/routes/auth.ts:106:42\n\n  103 }\n  104 \n  105 // Check if user already exists\n→ 106 const existingUser = await prisma.user.findFirst(\nError querying the database: Error code 14: Unable to open the database file\n    at new PrismaClientInitializationError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:21:1872)\n    at handleRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:7619)\n    at handleAndLogRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at <anonymous> (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at processTicksAndRejections (native:7:39)","code":"INTERNAL_ERROR"},"request":{"method":"POST","url":"/api/auth/register","userAgent":"curl/8.5.0","ip":"127.0.0.1","requestId":"6d3fd81b-d027-44ff-afc8-abafde07af51"},"response":{"statusCode":500}}
+{"timestamp":"2025-06-02T10:34:09.792Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:34:09 +0000] \"POST /api/auth/register HTTP/1.1\" 500 1004 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:14.000Z","level":"info","message":"Received SIGTERM. Starting graceful shutdown...","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.322Z","level":"info","message":"Production trading data initialized","service":"boomroach-api","trades":1000,"users":50,"engines":4}
+{"timestamp":"2025-06-02T10:35:24.332Z","level":"info","message":"Data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.332Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.332Z","level":"info","message":"✅ WebSocket service initialized successfully","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.356Z","level":"info","message":"🚀 BoomRoach Production Backend API running on http://0.0.0.0:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.356Z","level":"info","message":"📊 Health check: http://localhost:3001/health","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.357Z","level":"info","message":"🔗 API Status: http://localhost:3001/api/status","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.357Z","level":"info","message":"💎 BoomRoach Data: http://localhost:3001/api/boomroach","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.357Z","level":"info","message":"🌐 WebSocket: ws://localhost:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.357Z","level":"info","message":"📈 Trading API: http://localhost:3001/api/trading","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.357Z","level":"info","message":"🏆 Leaderboard: http://localhost:3001/api/leaderboard","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.357Z","level":"info","message":"📡 Live Stream: http://localhost:3001/api/stream/live-data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.357Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.358Z","level":"info","message":"🔄 Production Features Active:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.358Z","level":"info","message":"  ✅ Real-time WebSocket connections","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.358Z","level":"info","message":"  ✅ Advanced error handling and logging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.358Z","level":"info","message":"  ✅ Comprehensive trading engine APIs","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.358Z","level":"info","message":"  ✅ Performance monitoring and analytics","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.358Z","level":"info","message":"  ✅ Server-Sent Events for live data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.358Z","level":"info","message":"  ✅ Request tracking and debugging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.358Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:35:24.360Z","level":"warn","message":"⚠️ Database connection failed, continuing without database:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:37:05.922Z","level":"info","message":"New user registered","service":"boomroach-api","userId":"user_1748860625920_89tff81h6","username":"testuser","email":"test@example.com"}
+{"timestamp":"2025-06-02T10:37:05.925Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:37:05 +0000] \"POST /api/auth/register HTTP/1.1\" 201 980 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T10:39:09.062Z","level":"info","message":"User logged in","service":"boomroach-api","userId":"user_1748860625920_89tff81h6","username":"testuser","email":"test@example.com"}
+{"timestamp":"2025-06-02T10:39:09.063Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:10:39:09 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1009 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.501Z","level":"info","message":"Production trading data initialized","service":"boomroach-api","trades":1000,"users":50,"engines":4}
+{"timestamp":"2025-06-02T15:10:53.551Z","level":"info","message":"Data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.551Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.551Z","level":"info","message":"✅ WebSocket service initialized successfully","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.644Z","level":"warn","message":"⚠️ Database connection failed, continuing without database: Error querying the database: Error code 14: Unable to open the database file","stack":"PrismaClientInitializationError: Error querying the database: Error code 14: Unable to open the database file\n    at new PrismaClientInitializationError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:21:1872)\n    at <anonymous> (/home/project/backend/node_modules/@prisma/client/runtime/library.js:112:2492)\n    at processTicksAndRejections (native:7:39)","service":"boomroach-api","name":"PrismaClientInitializationError","clientVersion":"5.22.0"}
+{"timestamp":"2025-06-02T15:10:53.645Z","level":"warn","message":"⚠️ Database service initialization failed, continuing with basic functionality","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.648Z","level":"info","message":"🚀 BoomRoach Production Backend API running on http://0.0.0.0:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.649Z","level":"info","message":"📊 Health check: http://localhost:3001/health","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.649Z","level":"info","message":"🔗 API Status: http://localhost:3001/api/status","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.649Z","level":"info","message":"💎 BoomRoach Data: http://localhost:3001/api/boomroach","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.649Z","level":"info","message":"🌐 WebSocket: ws://localhost:3001","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.649Z","level":"info","message":"📈 Trading API: http://localhost:3001/api/trading","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.649Z","level":"info","message":"🔐 Authentication: http://localhost:3001/api/auth","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.649Z","level":"info","message":"🤖 Machine Learning: http://localhost:3001/api/ml","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.650Z","level":"info","message":"📚 API Documentation: http://localhost:3001/api-docs","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.650Z","level":"info","message":"🏆 Leaderboard: http://localhost:3001/api/leaderboard","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.650Z","level":"info","message":"📡 Live Stream: http://localhost:3001/api/stream/live-data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.650Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.650Z","level":"info","message":"🔄 Production Features Active:","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.650Z","level":"info","message":"  ✅ Real-time WebSocket connections","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.650Z","level":"info","message":"  ✅ Advanced error handling and logging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.650Z","level":"info","message":"  ✅ Comprehensive trading engine APIs","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.650Z","level":"info","message":"  ✅ Machine Learning algorithms (Price prediction, Pattern recognition, Sentiment analysis, Risk assessment)","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.651Z","level":"info","message":"  ✅ PostgreSQL database integration with connection pooling","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.651Z","level":"info","message":"  ✅ Interactive API documentation (Swagger/OpenAPI 3.0)","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.651Z","level":"info","message":"  ✅ Performance monitoring and analytics","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.651Z","level":"info","message":"  ✅ Server-Sent Events for live data","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.651Z","level":"info","message":"  ✅ Request tracking and debugging","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:10:53.651Z","level":"info","message":"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:12:37.860Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:12:37 +0000] \"GET /health HTTP/1.1\" 200 530 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:12:48.740Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:12:48 +0000] \"GET /api-docs HTTP/1.1\" 301 158 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:12:58.188Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:12:58 +0000] \"GET /api-docs/ HTTP/1.1\" 200 3097 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:13:09.467Z","level":"info","message":"Price prediction generated","service":"boomroach-api","symbol":"BTC/USDT","timeHorizon":60,"confidence":0.785540681807277}
+{"timestamp":"2025-06-02T15:13:09.467Z","level":"info","message":"Price prediction requested","service":"boomroach-api","symbol":"BTC/USDT","timeHorizon":60,"confidence":0.785540681807277,"trend":"bullish"}
+{"timestamp":"2025-06-02T15:13:09.468Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:13:09 +0000] \"POST /api/ml/predict/price HTTP/1.1\" 200 306 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:13:20.054Z","level":"info","message":"Pattern detection completed","service":"boomroach-api","symbol":"ETH/USDT","patterns":3}
+{"timestamp":"2025-06-02T15:13:20.054Z","level":"info","message":"Pattern detection requested","service":"boomroach-api","symbol":"ETH/USDT","patternsFound":3,"marketCondition":"sideways"}
+{"timestamp":"2025-06-02T15:13:20.055Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:13:20 +0000] \"POST /api/ml/patterns HTTP/1.1\" 200 540 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:13:32.665Z","level":"info","message":"Sentiment analysis completed","service":"boomroach-api","symbol":"DOGE/USDT","sentiment":"bullish"}
+{"timestamp":"2025-06-02T15:13:32.665Z","level":"info","message":"Sentiment analysis requested","service":"boomroach-api","symbol":"DOGE/USDT","sentiment":"bullish","overallSentiment":0.48525063102501587}
+{"timestamp":"2025-06-02T15:13:32.666Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:13:32 +0000] \"POST /api/ml/sentiment HTTP/1.1\" 200 257 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:13:43.611Z","level":"info","message":"Risk assessment completed","service":"boomroach-api","symbol":"BTC/USDT","riskLevel":"low","riskScore":1.1481648710595522}
+{"timestamp":"2025-06-02T15:13:43.612Z","level":"info","message":"Risk assessment requested","service":"boomroach-api","symbol":"BTC/USDT","portfolioValue":50000,"positionSize":5000,"riskLevel":"low","riskScore":1.1481648710595522}
+{"timestamp":"2025-06-02T15:13:43.612Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:13:43 +0000] \"POST /api/ml/risk-assessment HTTP/1.1\" 200 372 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:13:54.412Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:13:54 +0000] \"GET /api/ml/performance HTTP/1.1\" 200 605 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:14:09.148Z","level":"info","message":"Price prediction generated","service":"boomroach-api","symbol":"SOL/USDT","timeHorizon":120,"confidence":0.8110474122430212}
+{"timestamp":"2025-06-02T15:14:09.149Z","level":"info","message":"Pattern detection completed","service":"boomroach-api","symbol":"SOL/USDT","patterns":3}
+{"timestamp":"2025-06-02T15:14:09.149Z","level":"info","message":"Sentiment analysis completed","service":"boomroach-api","symbol":"SOL/USDT","sentiment":"bullish"}
+{"timestamp":"2025-06-02T15:14:09.150Z","level":"info","message":"Risk assessment completed","service":"boomroach-api","symbol":"SOL/USDT","riskLevel":"low","riskScore":1.428577044055233}
+{"timestamp":"2025-06-02T15:14:09.150Z","level":"info","message":"Comprehensive ML analysis requested","service":"boomroach-api","symbol":"SOL/USDT","timeHorizon":120,"recommendation":"sell","confidence":0.5447879521286422}
+{"timestamp":"2025-06-02T15:14:09.151Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:14:09 +0000] \"POST /api/ml/comprehensive-analysis HTTP/1.1\" 200 1731 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-02T15:14:20.959Z","level":"info","message":"New user registered","service":"boomroach-api","userId":"user_1748877260957_pjpalfx8p","username":"aitrader","email":"ai@boomroach.com"}
+{"timestamp":"2025-06-02T15:14:20.960Z","level":"info","message":"127.0.0.1 - - [02/Jun/2025:15:14:20 +0000] \"POST /api/auth/register HTTP/1.1\" 201 980 \"-\" \"curl/8.5.0\"","service":"boomroach-api"}
+{"timestamp":"2025-06-03T11:23:39.563Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T11:23:39.565Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T16:45:31.376Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T16:45:31.378Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T20:46:49.830Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T20:46:49.832Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T20:59:24.575Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:06:35.147Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:06:35.150Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:07:26.127Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:11:19.384Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:11:19.386Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:15:21.011Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:17:49.156Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:17:49.159Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:26:14.722Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:26:28.091Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:26:28.093Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:27:45.921Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:27:55.687Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:27:55.690Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:33:13.770Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:33:13.773Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:33:21.580Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:33:44.093Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:33:44.095Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:35:43.171Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:35:43.173Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T21:35:43.221Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:04:25.094Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:04:25.096Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:22:49.263Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:28:51.793Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:28:51.795Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:29:00.055Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:29:10.448Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:29:10.450Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:40:04.820Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T22:40:04.822Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T23:03:36.717Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T23:03:36.719Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T23:03:43.781Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}
+{"timestamp":"2025-06-03T23:04:13.078Z","level":"info","message":"Hydra-Bot data streams started","service":"boomroach-api"}
+{"timestamp":"2025-06-03T23:04:13.080Z","level":"info","message":"WebSocket service initialized","service":"boomroach-api"}
+{"timestamp":"2025-06-03T23:26:40.047Z","level":"info","message":"WebSocket service destroyed","service":"boomroach-api"}

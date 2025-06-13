@@ -1,0 +1,34 @@
+{
+  "timestamp": "2025-06-01T16:36:43.170Z",
+  "totalTests": 6,
+  "passed": 3,
+  "failed": 3,
+  "duration": "18.67s",
+  "status": "FAILED",
+  "components": {
+    "frontend": {
+      "framework": "Next.js 15.3.2",
+      "status": "tested"
+    },
+    "backend": {
+      "framework": "Express.js + TypeScript",
+      "status": "tested"
+    },
+    "database": {
+      "type": "PostgreSQL + Prisma",
+      "status": "configured"
+    },
+    "realtime": {
+      "type": "Socket.IO WebSockets",
+      "status": "integrated"
+    },
+    "telegram": {
+      "type": "node-telegram-bot-api",
+      "status": "integrated"
+    },
+    "trading": {
+      "type": "Hydra Bot System",
+      "status": "full-featured"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "smtpConfig": {
+    "host": "",
+    "port": 0,
+    "user": "",
+    "pass": "",
+    "secure": false
+  },
+  "templates": {
+    "welcome": true,
+    "tradeAlert": true,
+    "portfolioUpdate": true,
+    "engineStatus": true
+  }
+}
