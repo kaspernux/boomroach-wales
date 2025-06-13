@@ -1,0 +1,388 @@
+version: "3.8"
+
+services:
+  # Traefik - Reverse Proxy with SSL
+  traefik:
+    image: traefik:v3.0
+    container_name: boomroach-traefik
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080" # Traefik dashboard
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik:/traefik:ro
+      - ./traefik/acme:/acme
+    command:
+      - --api.dashboard=true
+      - --api.insecure=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
+      - --certificatesresolvers.letsencrypt.acme.email=${ACME_EMAIL}
+      - --certificatesresolvers.letsencrypt.acme.storage=/acme/acme.json
+      - --certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web
+    environment:
+      - TRAEFIK_API_DASHBOARD=true
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN}`)"
+      - "traefik.http.routers.traefik.entrypoints=websecure"
+      - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
+      - "traefik.http.services.traefik.loadbalancer.server.port=8080"
+    networks:
+      - boomroach-network
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: boomroach-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      # Jamais de valeur en clair ici !
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/backups:/backups
+      - ./database/init:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - boomroach-network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: boomroach-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    # Jamais de mot de passe en clair ici !
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - boomroach-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./boomroach/backend
+      dockerfile: Dockerfile.prod
+    container_name: boomroach-backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379
+      JWT_SECRET: ${JWT_SECRET}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+      SMTP_FROM: ${SMTP_FROM}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      TELEGRAM_WEBHOOK_URL: https://api.${DOMAIN}/api/telegram/webhook
+      BOOMROACH_CONTRACT: ${BOOMROACH_CONTRACT}
+      SOLANA_RPC_URL: ${SOLANA_RPC_URL}
+      ADMIN_SECRET: ${ADMIN_SECRET}
+      RATE_LIMIT_WINDOW: 900000
+      RATE_LIMIT_MAX: 100
+    volumes:
+      - ./boomroach/backend/logs:/app/logs
+      - ./boomroach/backend/uploads:/app/uploads
+      - ./config:/app/config:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.rule=Host(`api.${DOMAIN}`)"
+      - "traefik.http.routers.backend.entrypoints=websecure"
+      - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
+      - "traefik.http.services.backend.loadbalancer.server.port=3001"
+      - "traefik.http.routers.backend.middlewares=cors"
+      - "traefik.http.middlewares.cors.headers.accesscontrolalloworigin=*"
+      - "traefik.http.middlewares.cors.headers.accesscontrolallowmethods=GET,POST,PUT,DELETE,OPTIONS"
+      - "traefik.http.middlewares.cors.headers.accesscontrolallowheaders=*"
+    networks:
+      - boomroach-network
+
+  # Frontend Application
+  frontend:
+    build:
+      context: ./boomroach
+      dockerfile: Dockerfile.prod
+      args:
+        NEXT_PUBLIC_API_URL: https://api.${DOMAIN}
+        NEXT_PUBLIC_WS_URL: wss://api.${DOMAIN}
+        NEXT_PUBLIC_DOMAIN: ${DOMAIN}
+    container_name: boomroach-frontend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_URL: https://api.${DOMAIN}
+      NEXT_PUBLIC_WS_URL: wss://api.${DOMAIN}
+      NEXT_PUBLIC_DOMAIN: ${DOMAIN}
+    depends_on:
+      - backend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`app.${DOMAIN}`,`${DOMAIN}`)"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.tls.certresolver=letsencrypt"
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+    networks:
+      - boomroach-network
+
+  # HydraBot Trading Engines (Clustered)
+  hydra-bot-1:
+    build:
+      context: ./boomroach/hydra-bot
+      dockerfile: Dockerfile.prod
+    image: boomroach/hydra-bot:latest
+    container_name: boomroach-hydra-1
+    environment:
+      NODE_ENV: production
+      INSTANCE_ID: hydra-1
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379
+      SOLANA_RPC_URL: ${SOLANA_RPC_URL}
+      JUPITER_API_URL: https://quote-api.jup.ag/v6
+      AI_ENGINE_MODE: production
+    volumes:
+      - ./ai-models:/app/ai-models
+      - ./trading-data:/app/trading-data
+      - ./config:/app/config:ro
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+    networks:
+      - boomroach-network
+
+  # WebSocket Service
+  websocket:
+    build:
+      context: ./boomroach/websocket-service
+      dockerfile: Dockerfile.prod
+    image: boomroach/websocket:latest
+    container_name: boomroach-websocket
+    environment:
+      NODE_ENV: production
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379
+      PORT: 8080
+      CORS_ORIGIN: https://app.${DOMAIN}
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - boomroach-network
+
+  # Prometheus - Metrics Collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: boomroach-prometheus
+    restart: unless-stopped
+    volumes:
+      - ./monitoring/prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/etc/prometheus/console_libraries"
+      - "--web.console.templates=/etc/prometheus/consoles"
+      - "--storage.tsdb.retention.time=15d"
+      - "--web.enable-lifecycle"
+    ports:
+      - "9090:9090"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.prometheus.rule=Host(`metrics.${DOMAIN}`)"
+      - "traefik.http.routers.prometheus.entrypoints=websecure"
+      - "traefik.http.routers.prometheus.tls.certresolver=letsencrypt"
+      - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
+    networks:
+      - boomroach-network
+
+  # Grafana - Metrics Visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: boomroach-grafana
+    restart: unless-stopped
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_USER}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD}
+      GF_INSTALL_PLUGINS: grafana-clock-panel,grafana-simple-json-datasource
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana:/etc/grafana/provisioning
+    ports:
+      - "3000:3000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana.rule=Host(`dashboard.${DOMAIN}`)"
+      - "traefik.http.routers.grafana.entrypoints=websecure"
+      - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+    networks:
+      - boomroach-network
+    depends_on:
+      - prometheus
+
+  # Loki - Log Aggregation
+  loki:
+    image: grafana/loki:latest
+    container_name: boomroach-loki
+    restart: unless-stopped
+    volumes:
+      - ./monitoring/loki:/etc/loki
+      - loki_data:/loki
+    command: -config.file=/etc/loki/local-config.yaml
+    ports:
+      - "3100:3100"
+    networks:
+      - boomroach-network
+
+  # Promtail - Log Collection
+  promtail:
+    image: grafana/promtail:latest
+    container_name: boomroach-promtail
+    restart: unless-stopped
+    volumes:
+      - ./monitoring/promtail:/etc/promtail
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - boomroach-network
+    depends_on:
+      - loki
+
+  # Node Exporter - System Metrics
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: boomroach-node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - "--path.procfs=/host/proc"
+      - "--path.rootfs=/rootfs"
+      - "--path.sysfs=/host/sys"
+      - "--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"
+    ports:
+      - "9100:9100"
+    networks:
+      - boomroach-network
+
+  # Database Backup Service
+  db-backup:
+    image: postgres:15-alpine
+    container_name: boomroach-db-backup
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      BACKUP_RETENTION_DAYS: 30
+    volumes:
+      - ./database/backups:/backups
+      - ./scripts:/scripts
+    command: |
+      sh -c '
+        while true; do
+          echo "Starting database backup at $$(date)"
+          pg_dump -h postgres -U ${POSTGRES_USER} -d ${POSTGRES_DB} | gzip > /backups/backup_$$(date +%Y%m%d_%H%M%S).sql.gz
+          echo "Database backup completed at $$(date)"
+          find /backups -name "backup_*.sql.gz" -mtime +${BACKUP_RETENTION_DAYS} -delete
+          echo "Old backups cleaned up"
+          sleep 86400
+        done
+      '
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - boomroach-network
+
+  # Health Check Service
+  healthcheck:
+    image: alpine/curl:latest
+    container_name: boomroach-healthcheck
+    restart: unless-stopped
+    volumes:
+      - ./scripts:/scripts
+    command: |
+      sh -c '
+        while true; do
+          echo "Running health checks at $$(date)"
+          if curl -f http://backend:3001/health; then
+            echo "Backend is healthy"
+          else
+            echo "Backend health check failed"
+          fi
+          if curl -f http://frontend:3000; then
+            echo "Frontend is healthy"
+          else
+            echo "Frontend health check failed"
+          fi
+          if nc -z postgres 5432; then
+            echo "Database is healthy"
+          else
+            echo "Database health check failed"
+          fi
+          sleep 300
+        done
+      '
+    depends_on:
+      - backend
+      - frontend
+      - postgres
+    networks:
+      - boomroach-network
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  loki_data:
+    driver: local
+
+networks:
+  boomroach-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "botToken": "${TELEGRAM_BOT_TOKEN}",
+  "webhookUrl": "${TELEGRAM_WEBHOOK_URL}",
+  "alertTypes": ["trades", "portfolio", "engines", "system"]
+}

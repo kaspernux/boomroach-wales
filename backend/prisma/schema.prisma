@@ -1,0 +1,897 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// USER MANAGEMENT & AUTHENTICATION
+// ============================================
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  username  String   @unique
+  password  String
+  walletAddress String?
+  telegramId String? @unique
+  discordId String?  @unique
+  publicKey         String?
+
+  // Profile
+  displayName String?
+  avatar      String?
+  bio         String?
+  joinedAt    DateTime @default(now())
+  lastLoginAt  DateTime @default(now())
+
+  // Stats
+  level       Int @default(1)
+  xp          Int @default(0)
+  balance     Float @default(0.0)
+
+  // Trading
+  totalTrades     Int @default(0)
+  winningTrades   Int @default(0)
+  totalVolume     Float @default(0.0)
+  totalPnL        Float @default(0.0)
+
+  // Settings
+  emailVerificationToken    String?
+  emailVerificationExpires  DateTime
+  isActive          Boolean @default(true)
+  isEmailVerified   Boolean @default(false)
+  isAdmin           Boolean  @default(false)
+  isBanned          Boolean  @default(false)
+  isWalletConnected Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Trading Configuration
+  tradingEnabled    Boolean   @default(true)
+  autoTrading       Boolean   @default(false)
+  riskTolerance     RiskLevel @default(MEDIUM)
+  maxPositionSize   Decimal   @default(1.0) @db.Decimal(18, 8)
+  stopLossPercent   Decimal   @default(15.0) @db.Decimal(5, 2)
+  
+  // Relationships
+  portfolio         Portfolio?
+  trades            Trade[]
+  orders            Order[]
+  signals           Signal[]
+  notifications     Notification[]
+  achievements      UserAchievement[]
+  quests            UserQuest[]
+  guildMemberships  GuildMember[]
+  chatMessages      Message[]
+  sentMessages      Message[] @relation("SentMessages")
+  receivedMessages  Message[] @relation("ReceivedMessages")
+  socialProfile     SocialProfile?
+  sessions          Session[]
+  apiKeys           ApiKey[]
+
+  @@map("users")
+}
+
+model Portfolio {
+  id           String @id @default(cuid())
+  userId       String @unique
+  totalValue   Float  @default(0)
+  totalPnL     Float  @default(0)
+  totalPnLPercent Float @default(0)
+  lastUpdated  DateTime @default(now())
+  positions    String // Array of position objects (JSON as string)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("portfolios")
+}
+
+model SocialProfile {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  bio           String?
+  socialLinks   String?  // twitter, discord, etc. (JSON as string)
+  achievements  String?  // displayed achievements (JSON as string)
+  stats         String?  // public stats (JSON as string)
+  privacy       String?  // privacy settings (JSON as string)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("social_profiles")
+}
+
+model AdminLog {
+  id        String     @id @default(cuid())
+  adminId   String
+  action    String
+  target    String?    // user ID, guild ID, etc.
+  details   String?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime   @default(now())
+
+  @@map("admin_logs")
+}
+
+model SystemConfig {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("system_config")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model PriceData {
+  id        String   @id @default(cuid())
+  symbol    String
+  price     Float
+  change24h Float
+  volume24h Float
+  high24h   Float
+  low24h    Float
+  marketCap Float?
+  source    String   // jupiter, raydium, etc.
+  timestamp DateTime @default(now())
+
+  @@unique([symbol, timestamp])
+  @@map("price_data")
+}
+
+model Trade {
+  id                String      @id @default(cuid())
+  userId            String
+  positionId        String?
+  txSignature       String      @unique
+  type              TradeType
+  side              TradeSide
+  tokenMint         String
+  tokenSymbol       String
+  amount            Float      
+  price             Float     
+  solAmount         Float     
+  fees              Float     @default(0)
+  signature         String?     // Solana transaction signature
+  source            TradeSource @default(MANUAL)
+  commission        Decimal     @default(0) @db.Decimal(18, 8)
+  slippage          Decimal     @default(0) @db.Decimal(5, 4)
+  status            TradeStatus @default(PENDING)
+  engine            String?     // Which engine executed the trade
+  signalId          String?
+  blockTime         DateTime?
+  slot              BigInt?
+  metadata      String?     // Additional trade data (JSON as string)
+  executedAt    DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  position Position? @relation(fields: [positionId], references: [id])
+  signal   Signal?   @relation(fields: [signalId], references: [id])
+  
+  @@map("trades")
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  userId      String
+  type        OrderType
+  side        TradeSide
+  tokenMint   String
+  tokenSymbol String
+  amount      Decimal     @db.Decimal(18, 8)
+  price       Decimal?    @db.Decimal(18, 8)
+  triggerPrice Decimal?   @db.Decimal(18, 8)
+  stopLoss    Decimal?    @db.Decimal(18, 8)
+  takeProfit  Decimal?    @db.Decimal(18, 8)
+  status      OrderStatus @default(PENDING)
+  expiresAt   DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("orders")
+}
+
+// ============================================
+// TOKENS & MARKET DATA
+// ============================================
+
+model Token {
+  id              String    @id @default(cuid())
+  mint            String    @unique
+  symbol          String
+  name            String
+  decimals        Int
+  logoUrl         String?
+  description     String?
+  website         String?
+  twitter         String?
+  telegram        String?
+  discord         String?
+  isVerified      Boolean   @default(false)
+  isScam          Boolean   @default(false)
+  marketCap       Decimal?  @db.Decimal(18, 2)
+  totalSupply     Decimal?  @db.Decimal(18, 8)
+  circulatingSupply Decimal? @db.Decimal(18, 8)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  
+  prices   TokenPrice[]
+  signals  Signal[]
+  
+  @@map("tokens")
+}
+
+model TokenPrice {
+  id          String   @id @default(cuid())
+  tokenId     String
+  mint        String
+  price       Decimal  @db.Decimal(18, 8)
+  priceUsd    Decimal? @db.Decimal(18, 8)
+  volume24h   Decimal? @db.Decimal(18, 2)
+  change24h   Decimal? @db.Decimal(10, 4)
+  change7d    Decimal? @db.Decimal(10, 4)
+  liquidity   Decimal? @db.Decimal(18, 2)
+  fdv         Decimal? @db.Decimal(18, 2)
+  timestamp   DateTime @default(now())
+  source      String   @default("jupiter")
+  
+  token Token @relation(fields: [tokenId], references: [id], onDelete: Cascade)
+  
+  @@index([mint, timestamp])
+  @@map("token_prices")
+}
+
+// ============================================
+// AI SIGNALS & TRADING ENGINES
+// ============================================
+
+model Signal {
+  id              String       @id @default(cuid())
+  userId          String?
+  tokenId         String
+  engine          SignalEngine
+  type            SignalType
+  action          SignalAction
+  confidence      Decimal      @db.Decimal(3, 2) // 0.00 to 1.00
+  price           Decimal      @db.Decimal(18, 8)
+  targetPrice     Decimal?     @db.Decimal(18, 8)
+  stopLoss        Decimal?     @db.Decimal(18, 8)
+  timeframe       String?      // 1m, 5m, 15m, 1h, 4h, 1d
+  reasoning       Json?        // AI analysis details
+  metadata        Json?        // Additional signal data
+  status          SignalStatus @default(ACTIVE)
+  triggeredAt     DateTime?
+  expiredAt       DateTime?
+  createdAt       DateTime     @default(now())
+  
+  user   User?   @relation(fields: [userId], references: [id])
+  token  Token   @relation(fields: [tokenId], references: [id])
+  trades Trade[]
+  
+  @@map("signals")
+}
+
+model EngineStatus {
+  id            String   @id @default(cuid())
+  engine        String   @unique
+  status        String   // RUNNING, STOPPED, ERROR
+  lastHeartbeat DateTime @default(now())
+  config        Json?
+  stats         Json?    // Performance statistics
+  errors        Json?    // Recent errors
+  updatedAt     DateTime @updatedAt
+  
+  @@map("engine_status")
+}
+
+model Performance {
+  id        String   @id @default(cuid())
+
+  date      DateTime @default(now())
+
+  totalPnL     Float
+  dailyPnL     Float
+  totalTrades  Int
+  winningTrades Int
+  winRate      Float
+
+  avgExecution Float
+  riskScore    Float
+
+  boomroachPrice Float
+  treasuryBalance Float
+
+  @@map("performance")
+}
+
+// ============================================
+// RISK MANAGEMENT
+// ============================================
+
+model Alert {
+  id        String   @id @default(cuid())
+
+  type      String   // "success", "warning", "error", "info"
+  title     String
+  message   String
+
+  userId    String?
+  isGlobal  Boolean @default(false)
+  isRead    Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  @@map("alerts")
+}
+model RiskProfile {
+  id                 String    @id @default(cuid())
+  userId             String    @unique
+  maxDailyLoss       Decimal   @default(5.0) @db.Decimal(5, 2)
+  maxPositionSize    Decimal   @default(10.0) @db.Decimal(10, 2)
+  maxOpenPositions   Int       @default(5)
+  allowedTokens      String[]  // Whitelist of token mints
+  blacklistedTokens  String[]  // Blacklist of token mints
+  tradingHours       Json?     // Trading time restrictions
+  emergencyStop      Boolean   @default(false)
+  lastRiskCheck      DateTime  @default(now())
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  
+  @@map("risk_profiles")
+}
+
+model RiskAlert {
+  id          String     @id @default(cuid())
+  userId      String
+  type        AlertType
+  severity    AlertSeverity
+  message     String
+  data        Json?
+  isRead      Boolean    @default(false)
+  resolvedAt  DateTime?
+  createdAt   DateTime   @default(now())
+  
+  @@map("risk_alerts")
+}
+
+model Performance {
+  id        String   @id @default(cuid())
+
+  date      DateTime @default(now())
+
+  totalPnL     Float
+  dailyPnL     Float
+  totalTrades  Int
+  winningTrades Int
+  winRate      Float
+
+  avgExecution Float
+  riskScore    Float
+
+  boomroachPrice Float
+  treasuryBalance Float
+
+  @@map("performance")
+}
+
+
+// ============================================
+// TREASURY & TOKENOMICS
+// ============================================
+
+model TreasuryTransaction {
+  id            String            @id @default(cuid())
+  txSignature   String            @unique
+  type          TreasuryTxType
+  amount        Decimal           @db.Decimal(18, 8)
+  tokenMint     String
+  fromWallet    String?
+  toWallet      String?
+  commission    Decimal?          @db.Decimal(18, 8)
+  status        TransactionStatus @default(PENDING)
+  blockTime     DateTime?
+  createdAt     DateTime          @default(now())
+  
+  @@map("treasury_transactions")
+}
+
+model BurnEvent {
+  id            String   @id @default(cuid())
+  txSignature   String   @unique
+  amount        Decimal  @db.Decimal(18, 8)
+  preBurnSupply Decimal  @db.Decimal(18, 8)
+  postBurnSupply Decimal @db.Decimal(18, 8)
+  burnPercent   Decimal  @db.Decimal(5, 4)
+  communityVotes Int     @default(0)
+  blockTime     DateTime?
+  createdAt     DateTime @default(now())
+  
+  @@map("burn_events")
+}
+
+model Leaderboard {
+  id            String   @id @default(cuid())
+  userId        String
+  period        String   // daily, weekly, monthly, all-time
+  rank          Int
+  totalPnl      Decimal  @db.Decimal(18, 8)
+  totalPnlPct   Decimal  @db.Decimal(10, 4)
+  tradesCount   Int
+  winRate       Decimal  @db.Decimal(5, 2)
+  sharpeRatio   Decimal? @db.Decimal(10, 4)
+  maxDrawdown   Decimal? @db.Decimal(10, 4)
+  calculatedAt  DateTime @default(now())
+  
+  @@unique([userId, period])
+  @@map("leaderboard")
+}
+
+// ============================================
+// GAMIFICATION
+// ============================================
+
+model Achievement {
+  id          String @id @default(cuid())
+  name        String @unique
+  description String
+  icon        String
+  type         AchievementType
+  rarity      AchievementRarity
+  category    String
+  conditions  Json   // Achievement unlock conditions
+  rewards     Json?  // Rewards for achieving
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  
+  userAchievements UserAchievement[]
+  
+  @@map("achievements")
+}
+
+model UserAchievement {
+  id            String   @id @default(cuid())
+  userId        String
+  achievementId String
+  progress      Decimal  @default(0)
+  maxProgress   Int       @default(1)
+  isCompleted   Boolean  @default(false)
+  completedAt   DateTime?
+  createdAt     DateTime @default(now())
+  
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievement Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, achievementId])
+  @@map("user_achievements")
+}
+
+model Quest {
+  id          String     @id @default(cuid())
+  name        String
+  description String
+  category    String
+  type         QuestType
+  category     QuestCategory
+  difficulty  QuestDifficulty
+  rewards     Json
+  conditions  Json
+  maxProgress  Int        @default(1)
+  seasonalTheme String?   // halloween, christmas, etc.
+  startDate   DateTime
+  endDate     DateTime
+  isActive    Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  
+  userQuests UserQuest[]
+  
+  @@map("quests")
+}
+
+model UserQuest {
+  id          String    @id @default(cuid())
+  userId      String
+  questId     String
+  progress    Int       @default(0)
+  isCompleted Boolean   @default(false)
+  completedAt DateTime?
+  expiresAt   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quest Quest @relation(fields: [questId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questId])
+  @@map("user_quests")
+}
+
+model Guild {
+  id           String   @id @default(cuid())
+  name         String   @unique
+  description  String
+  avatar         String?
+  level        Int      @default(1)
+  experience   Int      @default(0)
+  maxMembers   Int      @default(50)
+  totalPower   Int      @default(0)
+  rank         Int      @default(0)
+  isPublic     Boolean  @default(true)
+  requirements String   // minLevel, minTradingVolume, etc. (JSON as string)
+  perks        String   // xpBonus, tradingFeeDiscount, etc. (JSON as string)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relationships
+  members    GuildMember[]
+  wars       GuildWar[]   @relation("AttackerGuild")
+  defending  GuildWar[]   @relation("DefenderGuild")
+  quests     GuildQuest[]
+  channels   GuildChannel[]
+
+  @@map("guilds")
+}
+
+model GuildMember {
+  id           String     @id @default(cuid())
+  userId       String     @unique
+  guildId      String
+  role         GuildRole  @default(MEMBER)
+  contribution Int        @default(0)
+  joinedAt     DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  guild Guild @relation(fields: [guildId], references: [id], onDelete: Cascade)
+
+  @@map("guild_members")
+}
+
+model GuildQuest {
+  id                 String      @id @default(cuid())
+  guildId            String
+  title              String
+  description        String
+  type               GuildQuestType
+  difficulty         QuestDifficulty
+  progress           Int         @default(0)
+  maxProgress        Int
+  participatingMembers Int       @default(0)
+  rewards            String      // guildXp, memberTokens, etc. (JSON as string)
+  requirements       String      // minMembers, roles, etc. (JSON as string)
+  isActive           Boolean     @default(true)
+  expiresAt          DateTime?
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+
+  guild Guild @relation(fields: [guildId], references: [id], onDelete: Cascade)
+
+  @@map("guild_quests")
+}
+
+model GuildWar {
+  id           String     @id @default(cuid())
+  attackerGuildId String
+  defenderGuildId String
+  objectives   String     // war objectives and points (JSON as string)
+  attackerScore Int       @default(0)
+  defenderScore Int       @default(0)
+  status       WarStatus  @default(UPCOMING)
+  rewards      String     // winner and participant rewards (JSON as string)
+  startTime    DateTime
+  endTime      DateTime
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  attackerGuild Guild @relation("AttackerGuild", fields: [attackerGuildId], references: [id])
+  defenderGuild Guild @relation("DefenderGuild", fields: [defenderGuildId], references: [id])
+
+  @@map("guild_wars")
+}
+
+model GuildChannel {
+  id        String   @id @default(cuid())
+  guildId   String
+  name      String
+  type      ChannelType @default(TEXT)
+  isPrivate Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  guild    Guild     @relation(fields: [guildId], references: [id], onDelete: Cascade)
+  messages Message[]
+
+  @@map("guild_channels")
+}
+
+model Message {
+  id        String      @id @default(cuid())
+  senderId  String
+  receiverId String?    // for direct messages
+  channelId String?    // for guild channels
+  content   String
+  type      MessageType @default(TEXT)
+  reactions String?    // emoji reactions (JSON as string)
+  editedAt  DateTime?
+  deletedAt DateTime?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  sender   User          @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver User?         @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+  channel  GuildChannel? @relation(fields: [channelId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
+
+// ============================================
+// SOCIAL & COMMUNITY
+// ============================================
+
+model Message {
+  id        String      @id @default(cuid())
+  senderId  String
+  receiverId String?    // for direct messages
+  channelId String?    // for guild channels
+  content   String
+  type      MessageType @default(TEXT)
+  reactions String?    // emoji reactions (JSON as string)
+  editedAt  DateTime?
+  deletedAt DateTime?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  sender   User          @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver User?         @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+  channel  GuildChannel? @relation(fields: [channelId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  type      NotificationType
+  title     String
+  message   String
+  data      Json?
+  isRead    Boolean          @default(false)
+  readAt    DateTime?
+  createdAt DateTime         @default(now())
+  
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("notifications")
+}
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum RiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+  EXTREME
+}
+
+enum PositionStatus {
+  OPEN
+  CLOSED
+  LIQUIDATED
+}
+
+enum TradeType {
+  MARKET
+  LIMIT
+  STOP_LOSS
+  TAKE_PROFIT
+  SNIPER
+  REENTRY
+}
+
+enum TradeSide {
+  BUY
+  SELL
+}
+
+enum OrderType {
+  MARKET
+  LIMIT
+  STOP_LOSS
+  TAKE_PROFIT
+  TRAILING_STOP
+}
+
+enum OrderStatus {
+  PENDING
+  FILLED
+  CANCELLED
+  EXPIRED
+  PARTIALLY_FILLED
+}
+
+enum SignalEngine {
+  AI_ANALYSIS
+  SNIPER
+  REENTRY
+  TECHNICAL
+  SENTIMENT
+  MANUAL
+}
+
+enum SignalType {
+  BUY
+  SELL
+  HOLD
+  ALERT
+}
+
+enum SignalAction {
+  STRONG_BUY
+  BUY
+  WEAK_BUY
+  HOLD
+  WEAK_SELL
+  SELL
+  STRONG_SELL
+}
+
+enum SignalStatus {
+  ACTIVE
+  TRIGGERED
+  EXPIRED
+  CANCELLED
+}
+
+enum AlertType {
+  RISK_LIMIT
+  PRICE_ALERT
+  POSITION_ALERT
+  SYSTEM_ALERT
+  TRADE_ALERT
+}
+
+enum AlertSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum TreasuryTxType {
+  COMMISSION
+  BURN
+  REWARD
+  WITHDRAWAL
+  DEPOSIT
+}
+
+enum TransactionStatus {
+  PENDING
+  CONFIRMED
+  FAILED
+}
+
+enum AchievementRarity {
+  COMMON
+  UNCOMMON
+  RARE
+  EPIC
+  LEGENDARY
+}
+
+
+enum GuildRole {
+  OWNER
+  OFFICER
+  ADMIN
+  MODERATOR
+  MEMBER
+}
+
+
+
+enum NotificationType {
+  TRADE_EXECUTED
+  SIGNAL_TRIGGERED
+  ACHIEVEMENT_UNLOCKED
+  RISK_ALERT
+  SYSTEM_UPDATE
+  GUILD_INVITE
+  PRICE_ALERT
+}
+
+enum AchievementType {
+  WALLET
+  TRADING
+  DAO
+  SOCIAL
+  SPECIAL
+  GUILD
+}
+
+enum QuestCategory {
+  TRADING
+  SOCIAL
+  COMMUNITY
+  ACHIEVEMENT
+  EXPLORATION
+}
+
+enum QuestDifficulty {
+  EASY
+  MEDIUM
+  HARD
+  LEGENDARY
+}
+
+enum GuildQuestType {
+  COLLABORATIVE
+  COMPETITIVE
+  RAID
+}
+
+enum WarStatus {
+  UPCOMING
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum ChannelType {
+  TEXT
+  VOICE
+  ANNOUNCEMENT
+}
+
+enum MessageType {
+  TEXT
+  IMAGE
+  SYSTEM
+  TRADE_SIGNAL
+  ACHIEVEMENT
+  SYSTEM
+}
+
+
+enum TradeStatus {
+  PENDING
+  PARTIAL
+  FILLED
+  CANCELLED
+  FAILED
+}
+
+enum TradeSource {
+  MANUAL
+  HYDRA_BOT
+  COPY_TRADE
+  TELEGRAM
+}
+
+

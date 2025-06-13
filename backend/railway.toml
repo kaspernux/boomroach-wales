@@ -1,0 +1,35 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[[services]]
+name = "backend"
+
+[services.source]
+repo = "."
+rootDirectory = "backend"
+
+[services.variables]
+NODE_ENV = "production"
+PORT = { value = "3001" }
+DATABASE_URL = { value = "file:./prod.db" }
+JWT_SECRET = { generate = true }
+SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com"
+
+[services.build]
+buildCommand = "npm install && npx prisma generate && npx prisma db push"
+startCommand = "npx tsx src/server.ts"
+
+[services.networking]
+externalPort = 443
+internalPort = 3001
+
+[[services.healthchecks]]
+path = "/health"
+intervalSeconds = 30
+timeoutSeconds = 10

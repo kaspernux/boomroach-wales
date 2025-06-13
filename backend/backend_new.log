@@ -1,0 +1,176 @@
+ExpressSlowDownWarning: The behaviour of the 'delayMs' option was changed in express-slow-down v2:
+- For the old behavior, change the delayMs option to:
+
+  delayMs: (used, req) => {
+	  const delayAfter = req.slowDown.limit;
+	  return (used - delayAfter) * 100;
+  },
+
+- For the new behavior, change the delayMs option to:
+
+	delayMs: () => 100,
+
+Or set 'options.validate: {delayMs: false}' to disable this message. See https://express-rate-limit.github.io/WRN_ESD_DELAYMS/ for more information.
+    at slowDown (/home/project/backend/node_modules/express-slow-down/dist/index.cjs:78:18)
+    at slowDown (/home/project/backend/src/middleware/security.ts:188:29)
+    at Object.<anonymous> (/home/project/backend/src/middleware/security.ts:383:1)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object.transformer (/home/same/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/register-D2KMMyKp.cjs:2:1186)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12) {
+  code: 'WRN_ESD_DELAYMS',
+  help: 'https://express-rate-limit.github.io/WRN_ESD_DELAYMS/'
+}
+2025-06-03T22:04:25.094Z [[32minfo[39m]: Hydra-Bot data streams started {"service":"boomroach-api"}
+2025-06-03T22:04:25.096Z [[32minfo[39m]: WebSocket service initialized {"service":"boomroach-api"}
+📊 Metrics collection started
+✅ Monitoring service initialized successfully
+✅ Database connected successfully
+❌ Hydra-Bot initialization failed: PrismaClientUnknownRequestError: 
+Invalid `prisma.engineStatus.count()` invocation in
+/home/project/backend/src/server.ts:70:49
+
+  67 const initializeHydraBotData = async () => {
+  68 	try {
+  69 		// Check if trading engines exist in database
+→ 70 		const engineCount = await prisma.engineStatus.count(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(SqliteError { extended_code: 11, message: Some("database disk image is malformed") }), transient: false })
+    at $n.handleRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:7505)
+    at $n.handleAndLogRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/project/backend/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async initializeHydraBotData (/home/project/backend/src/server.ts:70:23)
+    at async initializeDatabase (/home/project/backend/src/server.ts:57:3)
+    at async startServer (/home/project/backend/src/server.ts:335:23) {
+  clientVersion: '5.22.0'
+}
+🚀 BoomRoach Server with Hydra-Bot running on port 3001
+🌍 Environment: development
+🔌 WebSocket connections: 0
+🛡️  Security: Advanced rate limiting and CORS enabled
+🤖 Hydra-Bot: Integrated trading engines ready
+📊 Database: Connected
+📈 Monitoring: Active
+GET /health - 200 - 3ms - 49a6b521-c5b8-44d6-8dce-6e22cb855fea
+HTTP Request {
+  requestId: 'req_1748988271118_iydt7x7m8',
+  method: 'GET',
+  url: '/health',
+  status: 200,
+  duration: 11,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '205'
+}
+Login error: PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findFirst()` invocation in
+/home/project/backend/src/routes/auth.ts:32:39
+
+  29 
+  30 // For demo, allow demo credentials without password check
+  31 if (email === "demo@boomroach.com" && password === "demo123") {
+→ 32 	const demoUser = await prisma.user.findFirst(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(SqliteError { extended_code: 11, message: Some("database disk image is malformed") }), transient: false })
+    at $n.handleRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:7505)
+    at $n.handleAndLogRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/project/backend/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async <anonymous> (/home/project/backend/src/routes/auth.ts:32:21) {
+  clientVersion: '5.22.0'
+}
+POST /login - 500 - 6ms - 4a143ae7-4acf-47a1-9c59-f89c3db56c55
+HTTP Error Response {
+  requestId: 'req_1748988289429_ga61jl1dt',
+  method: 'POST',
+  url: '/login',
+  status: 500,
+  duration: 15,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '33'
+}
+Login error: PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findFirst()` invocation in
+/home/project/backend/src/routes/auth.ts:32:39
+
+  29 
+  30 // For demo, allow demo credentials without password check
+  31 if (email === "demo@boomroach.com" && password === "demo123") {
+→ 32 	const demoUser = await prisma.user.findFirst(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(SqliteError { extended_code: 11, message: Some("database disk image is malformed") }), transient: false })
+    at $n.handleRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:7505)
+    at $n.handleAndLogRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/project/backend/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async <anonymous> (/home/project/backend/src/routes/auth.ts:32:21) {
+  clientVersion: '5.22.0'
+}
+POST /login - 500 - 2ms - 308672fa-d4e3-4c43-93ec-42d34de42347
+HTTP Error Response {
+  requestId: 'req_1748988289450_hxdheqoz2',
+  method: 'POST',
+  url: '/login',
+  status: 500,
+  duration: 4,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '33'
+}
+Login error: PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findFirst()` invocation in
+/home/project/backend/src/routes/auth.ts:32:39
+
+  29 
+  30 // For demo, allow demo credentials without password check
+  31 if (email === "demo@boomroach.com" && password === "demo123") {
+→ 32 	const demoUser = await prisma.user.findFirst(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(SqliteError { extended_code: 11, message: Some("database disk image is malformed") }), transient: false })
+    at $n.handleRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:7505)
+    at $n.handleAndLogRequestError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/project/backend/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/project/backend/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async <anonymous> (/home/project/backend/src/routes/auth.ts:32:21) {
+  clientVersion: '5.22.0'
+}
+POST /login - 500 - 3ms - a097caa9-142d-4f9f-ad59-660a027274ad
+HTTP Error Response {
+  requestId: 'req_1748988305390_p0tr1z3rz',
+  method: 'POST',
+  url: '/login',
+  status: 500,
+  duration: 3,
+  ip: '::1',
+  userAgent: 'curl/8.5.0',
+  contentLength: '33'
+}
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 4 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+Batched metrics sent { count: 8 }
+SIGTERM received, shutting down gracefully
+HTTP server closed
+2025-06-03T22:22:49.263Z [[32minfo[39m]: WebSocket service destroyed {"service":"boomroach-api"}
+Batched metrics sent { count: 4 }
+✅ Monitoring service shut down successfully
+✅ Graceful shutdown completed

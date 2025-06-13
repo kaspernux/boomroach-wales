@@ -1,0 +1,10 @@
+{
+  "portfolioTracking": true,
+  "socialTrading": true,
+  "stakingRewards": false,
+  "referralProgram": false,
+  "mobileApp": true,
+  "advancedCharting": true,
+  "copyTrading": false,
+  "nftRewards": false
+}

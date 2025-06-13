@@ -1,0 +1,66 @@
+{"level":"info","message":"WebSocket service initialized successfully","service":"boomroach-backend","timestamp":"2025-06-02 08:51:43"}
+{"level":"info","message":"🚀 BoomRoach Enhanced Backend API running on http://0.0.0.0:3001","service":"boomroach-backend","timestamp":"2025-06-02 08:51:44"}
+{"level":"info","message":"📊 Health check: http://localhost:3001/health","service":"boomroach-backend","timestamp":"2025-06-02 08:51:44"}
+{"level":"info","message":"WebSocket service initialized successfully","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"🚀 BoomRoach Enhanced Backend API running on http://0.0.0.0:3001","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"📊 Health check: http://localhost:3001/health","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"🔗 API Status: http://localhost:3001/api/status","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"💎 BoomRoach Data: http://localhost:3001/api/boomroach","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"🌐 WebSocket: ws://localhost:3001","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"📈 Trading API: http://localhost:3001/api/trading","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"🔄 Advanced Features Active:","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"  • Real-time WebSocket connections","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"  • Advanced error handling and logging","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"  • Comprehensive trading engine APIs","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"  • Performance monitoring","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"  • Database with sample data ready","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"","service":"boomroach-backend","timestamp":"2025-06-02 08:53:03"}
+{"clientVersion":"5.22.0","level":"error","message":"❌ Database connection failed: Error querying the database: Error code 14: Unable to open the database file","name":"PrismaClientInitializationError","service":"boomroach-backend","stack":"PrismaClientInitializationError: Error querying the database: Error code 14: Unable to open the database file\n    at new PrismaClientInitializationError (/home/project/backend/node_modules/@prisma/client/runtime/library.js:21:1872)\n    at <anonymous> (/home/project/backend/node_modules/@prisma/client/runtime/library.js:112:2492)\n    at processTicksAndRejections (native:7:39)","timestamp":"2025-06-02 08:53:03"}
+{"level":"info","message":"✅ WebSocket service initialized successfully","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"✅ Database connected successfully (simulated)","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"🚀 BoomRoach Enhanced Backend API running on http://0.0.0.0:3001","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"📊 Health check: http://localhost:3001/health","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"📊 Detailed health: http://localhost:3001/health/detailed","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"🔗 API Status: http://localhost:3001/api/status","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"💎 BoomRoach Data: http://localhost:3001/api/boomroach","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"🌐 WebSocket: ws://localhost:3001","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"📈 Trading API: http://localhost:3001/api/trading","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"🏆 Leaderboard: http://localhost:3001/api/leaderboard","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"📡 Live Stream: http://localhost:3001/api/stream/live-data","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"🔄 Enhanced Features Active:","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"  ✅ Real-time WebSocket connections","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"  ✅ Advanced error handling and logging","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"  ✅ Comprehensive trading engine APIs","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"  ✅ Performance monitoring and analytics","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"  ✅ Server-Sent Events for live data","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"  ✅ Request tracking and debugging","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"level":"info","message":"","service":"boomroach-backend","timestamp":"2025-06-02 08:55:20"}
+{"ip":"127.0.0.1","level":"info","message":"Request started","method":"GET","requestId":"ac38377e-2c56-472d-9ad1-04ca3980cbd4","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28","url":"/health","userAgent":"curl/8.5.0"}
+{"body":{},"headers":{"accept":"*/*","host":"localhost:3001","user-agent":"curl/8.5.0","x-request-id":"ac38377e-2c56-472d-9ad1-04ca3980cbd4"},"level":"info","message":"Incoming request","method":"GET","params":{},"query":{},"requestId":"ac38377e-2c56-472d-9ad1-04ca3980cbd4","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28","url":"/health"}
+{"health":{"environment":"development","memory":{"heapTotal":"6MB","heapUsed":"7MB","rss":"81MB"},"requestId":"ac38377e-2c56-472d-9ad1-04ca3980cbd4","status":"healthy","timestamp":"2025-06-02T08:55:28.501Z","uptime":"0h 0m","version":"1.0.0"},"level":"info","message":"Health check performed","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28"}
+{"duration":"1ms","level":"info","message":"Request completed","method":"GET","requestId":"ac38377e-2c56-472d-9ad1-04ca3980cbd4","responseSize":232,"service":"boomroach-backend","statusCode":200,"timestamp":"2025-06-02 08:55:28","url":"/health"}
+{"level":"info","message":"127.0.0.1 - - [02/Jun/2025:08:55:28 +0000] \"GET /health HTTP/1.1\" 200 232 \"-\" \"curl/8.5.0\"","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28"}
+{"ip":"127.0.0.1","level":"info","message":"Request started","method":"GET","requestId":"6714987f-ae3c-4083-8b56-f1f04597e11c","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28","url":"/api/websocket/info","userAgent":"curl/8.5.0"}
+{"body":{},"headers":{"accept":"*/*","host":"localhost:3001","user-agent":"curl/8.5.0","x-request-id":"6714987f-ae3c-4083-8b56-f1f04597e11c"},"level":"info","message":"Incoming request","method":"GET","params":{},"query":{},"requestId":"6714987f-ae3c-4083-8b56-f1f04597e11c","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28","url":"/api/websocket/info"}
+{"duration":"0ms","level":"info","message":"Request completed","method":"GET","requestId":"6714987f-ae3c-4083-8b56-f1f04597e11c","responseSize":554,"service":"boomroach-backend","statusCode":200,"timestamp":"2025-06-02 08:55:28","url":"/api/websocket/info"}
+{"level":"info","message":"127.0.0.1 - - [02/Jun/2025:08:55:28 +0000] \"GET /api/websocket/info HTTP/1.1\" 200 554 \"-\" \"curl/8.5.0\"","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28"}
+{"ip":"127.0.0.1","level":"info","message":"Request started","method":"GET","requestId":"01c6496a-1803-4b39-bcb5-a6e133b23d45","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28","url":"/api/trading/engines","userAgent":"curl/8.5.0"}
+{"body":{},"headers":{"accept":"*/*","host":"localhost:3001","user-agent":"curl/8.5.0","x-request-id":"01c6496a-1803-4b39-bcb5-a6e133b23d45"},"level":"info","message":"Incoming request","method":"GET","params":{},"query":{},"requestId":"01c6496a-1803-4b39-bcb5-a6e133b23d45","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28","url":"/api/trading/engines"}
+{"level":"info","message":"Fetching trading engines list","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28"}
+{"duration":"1ms","level":"info","message":"Request completed","method":"GET","requestId":"01c6496a-1803-4b39-bcb5-a6e133b23d45","responseSize":1462,"service":"boomroach-backend","statusCode":200,"timestamp":"2025-06-02 08:55:28","url":"/engines"}
+{"level":"info","message":"127.0.0.1 - - [02/Jun/2025:08:55:28 +0000] \"GET /api/trading/engines HTTP/1.1\" 200 1462 \"-\" \"curl/8.5.0\"","service":"boomroach-backend","timestamp":"2025-06-02 08:55:28"}
+{"ip":"127.0.0.1","level":"info","message":"Request started","method":"GET","requestId":"d4eb28f2-6beb-412f-a3ae-2194bed872b3","service":"boomroach-backend","timestamp":"2025-06-02 08:55:37","url":"/api/trading/engines","userAgent":"curl/8.5.0"}
+{"body":{},"headers":{"accept":"*/*","host":"localhost:3001","user-agent":"curl/8.5.0","x-request-id":"d4eb28f2-6beb-412f-a3ae-2194bed872b3"},"level":"info","message":"Incoming request","method":"GET","params":{},"query":{},"requestId":"d4eb28f2-6beb-412f-a3ae-2194bed872b3","service":"boomroach-backend","timestamp":"2025-06-02 08:55:37","url":"/api/trading/engines"}
+{"level":"info","message":"Fetching trading engines list","service":"boomroach-backend","timestamp":"2025-06-02 08:55:37"}
+{"duration":"1ms","level":"info","message":"Request completed","method":"GET","requestId":"d4eb28f2-6beb-412f-a3ae-2194bed872b3","responseSize":1462,"service":"boomroach-backend","statusCode":200,"timestamp":"2025-06-02 08:55:37","url":"/engines"}
+{"level":"info","message":"127.0.0.1 - - [02/Jun/2025:08:55:37 +0000] \"GET /api/trading/engines HTTP/1.1\" 200 1462 \"-\" \"curl/8.5.0\"","service":"boomroach-backend","timestamp":"2025-06-02 08:55:37"}
+{"ip":"127.0.0.1","level":"info","message":"Request started","method":"GET","requestId":"c285cd96-44ef-4379-a992-95264963d311","service":"boomroach-backend","timestamp":"2025-06-02 08:55:46","url":"/api/websocket/info","userAgent":"curl/8.5.0"}
+{"body":{},"headers":{"accept":"*/*","host":"localhost:3001","user-agent":"curl/8.5.0","x-request-id":"c285cd96-44ef-4379-a992-95264963d311"},"level":"info","message":"Incoming request","method":"GET","params":{},"query":{},"requestId":"c285cd96-44ef-4379-a992-95264963d311","service":"boomroach-backend","timestamp":"2025-06-02 08:55:46","url":"/api/websocket/info"}
+{"duration":"0ms","level":"info","message":"Request completed","method":"GET","requestId":"c285cd96-44ef-4379-a992-95264963d311","responseSize":555,"service":"boomroach-backend","statusCode":200,"timestamp":"2025-06-02 08:55:46","url":"/api/websocket/info"}
+{"level":"info","message":"127.0.0.1 - - [02/Jun/2025:08:55:46 +0000] \"GET /api/websocket/info HTTP/1.1\" 200 555 \"-\" \"curl/8.5.0\"","service":"boomroach-backend","timestamp":"2025-06-02 08:55:46"}
+{"ip":"127.0.0.1","level":"info","message":"Request started","method":"GET","requestId":"c5baf28c-71f1-4c60-b555-e3c993043fda","service":"boomroach-backend","timestamp":"2025-06-02 08:55:56","url":"/api/leaderboard","userAgent":"curl/8.5.0"}
+{"body":{},"headers":{"accept":"*/*","host":"localhost:3001","user-agent":"curl/8.5.0","x-request-id":"c5baf28c-71f1-4c60-b555-e3c993043fda"},"level":"info","message":"Incoming request","method":"GET","params":{},"query":{},"requestId":"c5baf28c-71f1-4c60-b555-e3c993043fda","service":"boomroach-backend","timestamp":"2025-06-02 08:55:56","url":"/api/leaderboard"}
+{"duration":"1ms","level":"info","message":"Request completed","method":"GET","requestId":"c5baf28c-71f1-4c60-b555-e3c993043fda","responseSize":2647,"service":"boomroach-backend","statusCode":200,"timestamp":"2025-06-02 08:55:56","url":"/api/leaderboard"}
+{"level":"info","message":"127.0.0.1 - - [02/Jun/2025:08:55:56 +0000] \"GET /api/leaderboard HTTP/1.1\" 200 2667 \"-\" \"curl/8.5.0\"","service":"boomroach-backend","timestamp":"2025-06-02 08:55:56"}

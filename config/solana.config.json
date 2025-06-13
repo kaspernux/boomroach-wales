@@ -1,0 +1,5 @@
+{
+  "rpcUrl": "https://api.mainnet-beta.solana.com",
+  "wsUrl": "wss://api.mainnet-beta.solana.com",
+  "network": "mainnet-beta"
+}

@@ -1,0 +1,22 @@
+{
+  "monitoring": {
+    "enabled": true,
+    "logLevel": "info",
+    "backend": {
+      "healthCheck": true,
+      "metrics": true,
+      "errorTracking": true
+    },
+    "telegramBot": {
+      "enabled": true,
+      "notifyOnError": true,
+      "notifyOnStatusChange": true,
+      "chatId": "${TELEGRAM_CHAT_ID}"
+    },
+    "hydraBot": {
+      "enabled": true,
+      "monitorTasks": true,
+      "alertOnFailure": true
+    }
+  }
+}

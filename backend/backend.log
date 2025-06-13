@@ -1,0 +1,22 @@
+node:internal/modules/cjs/loader:1225
+  const err = new Error(message);
+              ^
+
+Error: Cannot find module 'compression'
+Require stack:
+- /home/project/backend/src/server.ts
+    at node:internal/modules/cjs/loader:1225:15
+    at nextResolveSimple (/home/same/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/register-D2KMMyKp.cjs:3:942)
+    at /home/same/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/register-D2KMMyKp.cjs:2:2550
+    at /home/same/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/register-D2KMMyKp.cjs:2:1624
+    at resolveTsPaths (/home/same/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/register-D2KMMyKp.cjs:3:760)
+    at /home/same/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/register-D2KMMyKp.cjs:3:1038
+    at m._resolveFilename (file:///home/same/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/register-hc1YoAqe.mjs:1:789)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/home/project/backend/src/server.ts' ]
+}
+
+Node.js v22.14.0

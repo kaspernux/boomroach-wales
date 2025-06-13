@@ -1,0 +1,8 @@
+{
+  "maintenanceMode": false,
+  "maintenanceMessage": "System is under maintenance. Please try again later.",
+  "logging": {
+    "level": "info",
+    "retentionDays": 30
+  }
+}

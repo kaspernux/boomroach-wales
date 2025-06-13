@@ -1,0 +1,4 @@
+{
+  "provider": "postgresql",
+  "url": "${DATABASE_URL}"
+}
